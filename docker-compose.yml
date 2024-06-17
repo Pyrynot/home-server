@@ -120,8 +120,8 @@ services:
       - TZ=${TZ}
     volumes:
       - ${BASE_PATH}/prowlarr/config:/config
-    #networks:
-    #  - proxy
+    networks:
+      - proxy
     ports:
       - 9696:9696
     restart: unless-stopped
@@ -151,8 +151,8 @@ services:
     volumes:
       - ${BASE_PATH}/overseer/config:/config
       - ${UNRAID_SHARE}:/share #Access to the entire share
-    #networks:
-    #  - proxy
+    networks:
+      - proxy
     ports:
       - 5055:5055
     restart: unless-stopped
@@ -431,3 +431,12 @@ services:
       - ${BASE_PATH}/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
     networks:
       - proxy
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - 9443:9443
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
