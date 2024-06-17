@@ -21,8 +21,8 @@ version: "3.8"
 
 networks: #This is used if you have a reverse proxy. I use Nginx Proxy Manager but anything will do
   proxy:
-    external:
-      name: proxy
+
+
       
 services:
   plex:
