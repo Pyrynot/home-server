@@ -293,14 +293,14 @@ services:
   #Can be configured so that when a plex member invites an outside user to a discord channel they are auto invited to plex
   #
   #Feel free to remove this container if you want to manually invite everyone yourself
-  membarr:
-    container_name: membarr
-    image: yoruio/membarr:latest
-    restart: unless-stopped
-    environment:
-      - token=${MEMBARR_TOKEN}
-    volumes:
-      - ${BASE_PATH}/membarr/config:/app/app/config
+  #membarr:
+   # container_name: membarr
+    #image: yoruio/membarr:latest
+    #restart: unless-stopped
+    #environment:
+     # - token=${MEMBARR_TOKEN}
+    #volumes:
+     # - ${BASE_PATH}/membarr/config:/app/app/config
       
   #Bazarr - for subtitles. Try to use SRT format if you can rather than PGS due to performance issues
   bazarr:
@@ -432,6 +432,7 @@ services:
     networks:
       - proxy
 
+
   portainer:
     image: portainer/portainer-ce:latest
     ports:
@@ -440,3 +441,5 @@ services:
       - ${BASE_PATH}/portainer/data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
+    networks:
+      - proxy
