@@ -196,10 +196,12 @@ services:
       - VPN_TYPE=wireguard #Wireguard is generally faster than OpenVPN
       - WIREGUARD_PRIVATE_KEY=${WIREGUARD_PRIVATE_KEY} #Example IE4cdRxZzoy/HvlLXVLB.2Hy@d=
       - WIREGUARD_PRESHARED_KEY=${WIREGUARD_PRESHARED_KEY} #Example IE4cdRxZzoy/HvlLXVLB.2Hy@d=
+      - VPN_ENDPOINT_IP=${VPN_ENDPOINT_IP}
+      - VPN_ENDPOINT_PORT=${VPN_ENDPOINT_PORT}
       - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES} #Example 101.14.14.28/32
-      - SERVER_HOSTNAMES=${SERVER_HOSTNAMES} #Example vpn.airdns.org
-      - SERVER_NAMES=${VPN_SERVER_NAMES} #Example Dallim
-      - SERVER_CITIES=${VPN_SERVER_CITIES} #Example Albasserdonia
+      #- SERVER_HOSTNAMES=${SERVER_HOSTNAMES} #Example vpn.airdns.org
+      #- SERVER_NAMES=${VPN_SERVER_NAMES} #Example Dallim
+      #- SERVER_CITIES=${VPN_SERVER_CITIES} #Example Albasserdonia
       #- FIREWALL_VPN_INPUT_PORTS=${FIREWALL_VPN_INPUT_PORTS} #Example 8926 - Used for port forwarding
       
   #Qbittorent - torrenting software
